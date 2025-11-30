@@ -9,7 +9,7 @@ const Privatekey =
 /**
 *@param {string} token - Galing sa HTML 
 */
-async function myPoop(token){
+async function validateturnstilebyTren(token){
 if (!token) return false;
 const data = new
 URLSearchParams();
