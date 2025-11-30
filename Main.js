@@ -1,21 +1,34 @@
-//Its hard but i did it!
+
+*/ Gumamit ng ENV pag production ang website mo
+*/
+
 const fetch = require('node-fetch');
-/* Wag ihardcode pag production ang iyong website
-*/
+//Ang Privatekey
 const Privatekey =
-"ANG_IYONG_PRIVATE_KEY";
+"PRIVATE_STRING";
 /**
-*@param {string} token - From Client Side
+*@param {string} token - Galing sa HTML 
 */
-async function Verify(token){
+async function myPoop(token){
 if (!token) return false;
 const data = new
 URLSearchParams();
 data.append("secret", 
-Privatekey);
+Pribado);
 data.append("response", token);
 try {
 const response = await
 fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify',
 {
 method: 'POST',
+body: data,
+});
+const result = await response.json();
+        
+        return result.success; 
+catch (e) {
+        
+        console.error("Error:", e);
+        return false;
+    }
+}
